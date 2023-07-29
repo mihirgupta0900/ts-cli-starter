@@ -1,0 +1,44 @@
+{
+  "name": "ts-cli-starter",
+  "version": "0.0.1",
+  "description": "CLI to clean up your github repos",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mihirgupta0900/ts-cli-starter.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "bin": "./dist/index.js",
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build-fast": "tsup",
+    "build": "pnpm run build-fast --dts",
+    "dev": "pnpm run build-fast --watch",
+    "test": "vitest run",
+    "prepublishOnly": "pnpm run build",
+    "release": "changeset publish"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@changesets/cli": "^2.26.2",
+    "@egoist/prettier-config": "1.0.0",
+    "@types/inquirer": "^9.0.3",
+    "prettier": "2.8.4",
+    "tsup": "6.6.3",
+    "typescript": "4.9.5",
+    "vitest": "0.28.5"
+  },
+  "dependencies": {
+    "@commander-js/extra-typings": "^11.0.0",
+    "@inquirer/prompts": "^3.0.0",
+    "chalk": "^5.3.0",
+    "commander": "^11.0.0",
+    "conf": "^11.0.2"
+  }
+}
